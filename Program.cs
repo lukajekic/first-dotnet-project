@@ -6,7 +6,7 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("CORS", policy =>
     {
-        policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+        policy.WithOrigins("https://first-dotnet-frontend.vercel.app").AllowAnyHeader().WithMethods("GET", "POST", "PUT", "DELETE");
     });
 });
 builder.Services.AddValidation();
